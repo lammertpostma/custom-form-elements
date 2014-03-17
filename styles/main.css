@@ -1,0 +1,246 @@
+/* 	==============================
+		MIXINS
+	============================== */
+/*
+	 	BORDER RADIUS
+		usage: 	.borderRadius(size)   or    .borderRadius(topLeft topRight bottomRight bottomLeft)
+		e.g.:	.borderRadius(4px)
+				.borderRadius(0 0 4px 4px)
+	*/
+/*
+	 	BOX SHADOW
+		usage: 	.boxShadow(fromLeft fromTop size color)
+		e.g: 	.boxShadow(0 0 10px rgba(0,0,0,0.3))
+	 			.boxShadow(inset 2px 2px 10px #666)
+	*/
+/*
+		BORDER BOX
+		usage:	Padding will not be added to determine the element width.
+		e.g.:	Best usage when you want to add a padding in PX on a element width in %
+	*/
+/*
+		CLEARFIX
+		Doesn't accept any floating element before or after te elemement.
+	*/
+/*
+		TRANSITION
+		usage:	.transition(duration)
+	*/
+body {
+  text-align: center;
+  font-family: "Open Sans";
+}
+.wrapper {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+}
+.wrapper .wrapper-content {
+  text-align: left;
+}
+.custom-control input[type="checkbox"] {
+  position: absolute;
+  visibility: hidden;
+}
+.custom-control input[type="checkbox"] + span {
+  position: relative;
+  padding-left: 25px;
+}
+.custom-control input[type="checkbox"] + span:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  content: "";
+  font-size: 18px;
+  text-align: center;
+  line-height: 16px;
+  background: #ddd;
+  border: 1px solid #00c009;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+.custom-control input[type="checkbox"] + span:hover:before {
+  border: 1px solid #00c009;
+}
+.custom-control input[type="checkbox"]:checked + span:before {
+  content: "\2713";
+  color: #00c009;
+  border: 1px solid #00c009;
+}
+.custom-control input[type="checkbox"]:disabled + span {
+  color: #bbbbbb;
+  cursor: not-allowed;
+}
+.custom-control input[type="checkbox"]:disabled + span:before {
+  box-shadow: none;
+  color: #bbbbbb;
+  border-color: #bbbbbb;
+}
+.toggle label {
+  *zoom: 1;
+}
+.toggle label:after,
+.toggle label:before {
+  content: " ";
+  display: table;
+}
+.toggle label:after {
+  clear: both;
+}
+.toggle label .toggle-control {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  float: left;
+  background: #EEE;
+  box-shadow: inset 0 3px 3px #DDD, 0 0 1px #CCC;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+}
+.toggle label .toggle-control:before,
+.toggle label .toggle-control:after {
+  content: "ON";
+  position: absolute;
+  left: 15px;
+  top: 5px;
+  font-weight: 300;
+  color: green;
+  font-size: 0.9em;
+  text-shadow: 0 0 3px white;
+}
+.toggle label .toggle-control:after {
+  content: "OFF";
+  left: auto;
+  right: 10px;
+  color: #AAA;
+}
+.toggle label .toggle-control input[type=checkbox] {
+  visibility: hidden;
+  position: absolute;
+}
+.toggle label .toggle-control input[type=checkbox]:checked + span {
+  left: 47px;
+}
+.toggle label .toggle-control input[type=checkbox]:checked + span:before {
+  left: -40px;
+}
+.toggle label .toggle-control .toggle-switch {
+  position: absolute;
+  z-index: 1;
+  top: 2px;
+  left: 3px;
+  display: block;
+  width: 50px;
+  height: 26px;
+  text-indent: -9999px;
+  background: -webkit-linear-gradient(#666666, #333333);
+  background: -moz-linear-gradient(#666666, #333333);
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  border-radius: 7px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.toggle label .toggle-control .toggle-switch:before {
+  content: "";
+  left: 100%;
+  top: 0;
+  height: 26px;
+  background: transparent;
+  position: absolute;
+  display: block;
+  width: 40px;
+}
+.toggle label .toggle-label {
+  float: left;
+  display: inline-block;
+  height: 30px;
+  margin-left: 15px;
+  line-height: 30px;
+}
+.custom-control input[type="radio"] {
+  position: absolute;
+  visibility: hidden;
+}
+.custom-control input[type="radio"] + span {
+  position: relative;
+  padding-left: 25px;
+}
+.custom-control input[type="radio"] + span:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  content: "";
+  font-size: 40px;
+  text-align: center;
+  line-height: 16px;
+  background: #ddd;
+  border: 1px solid #00c009;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+}
+.custom-control input[type="radio"]:checked + span:before {
+  content: "\2022";
+  color: #00c009;
+}
+.custom-control input[type="radio"]:disabled + span {
+  color: #bbbbbb;
+  cursor: not-allowed;
+}
+.custom-control input[type="radio"]:disabled + span:before {
+  box-shadow: none;
+  color: #bbbbbb;
+  border-color: #bbbbbb;
+}
+.custom-control select {
+  padding: 1em 1.5em 1em 1em;
+  font-size: .8em;
+  background: #fafafa url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==') no-repeat;
+  background-position: 96% center;
+  border: 1px solid #008d07;
+  -webkit-appearance: none !important;
+  -moz-appearance: none;
+  text-indent: .01px;
+  text-overflow: '';
+}
+.custom-control select:disabled {
+  border: 1px solid #bbbbbb;
+  background: #fafafa url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxMy4wLjIsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDE0OTQ4KSAgLS0+DQo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjhweCIgaGVpZ2h0PSI0cHgiIHZpZXdCb3g9IjAgMCA4IDQiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDggNCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cG9seWdvbiBmaWxsPSIjQUFBQUFBIiBwb2ludHM9IjAsMCA4LDAgNC4yMDcsNCAiLz4NCjwvc3ZnPg0K') no-repeat;
+  background-position: 97% center;
+  cursor: not-allowed;
+}
+.custom-control select:disabled:hover {
+  border: 1px solid #bbbbbb;
+}
+.custom-control select:hover {
+  border: 1px solid #00c009;
+}
+.custom-control select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #00c009;
+}
+label {
+  display: block;
+}

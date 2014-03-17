@@ -1,0 +1,53 @@
+// custom radio
+.custom-control {
+
+	input[type="radio"] {
+		position: absolute;
+		visibility: hidden;
+
+		+ span {
+			position: relative;
+			padding-left: 25px;
+			
+			&:before{
+				position: absolute;
+				top: 0;
+				left: 0;
+
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+
+				content: "";
+				font-size: 40px;  
+			    text-align: center;  
+			    line-height: 16px;
+			    
+				background: #ddd;
+				border: 1px solid @color-primary;
+				.borderRadius(50%);
+				.boxShadow(inset 0 0 1px rgba(0,0,0,.5));
+			};
+		}
+		
+	
+		// STATES
+		// checked
+		&:checked + span:before {
+			content: "\2022";  
+		    color: @color-primary;  
+		}
+		
+		// disabled
+		&:disabled + span {
+			color: @color-disabled;  
+			cursor: not-allowed;
+
+			&:before {
+				box-shadow: none;
+				color: @color-disabled;  
+				border-color: @color-disabled;
+			}
+		}
+	}
+}
